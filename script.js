@@ -186,9 +186,6 @@ function generatePassword() {
       case "special":
         result = generateSpecial();
         break;
-
-      default:
-        break;
     }
 
     // Add the returned character to the password
