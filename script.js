@@ -25,80 +25,6 @@ function resetVariables() {
   chosenParameters = [];
 }
 
-// Function to generate the password
-function generatePassword() {
-
-  // Reset the variables
-  resetVariables();
-
-  // Prompts to retrieve password length
-  do {
-    passwordLength = prompt("Step 1/5:\nPlease choose a password length, between 8 and 128 characters.")
-  }
-  // Validate the password input
-  while (!validateNumber(passwordLength));
-
-  // Check remaining parameter
-  do {
-    // Check for lowercase characters
-    lowercase = confirm("Step 2/5:\nWould you like to use lowercase characters in your password?");
-
-    // Check for uppercase characters
-    uppercase = confirm("Step 3/5:\nWould you like to use uppercase characters in your password?");
-
-    // Check for numeric characters
-    numeric = confirm("Step 4/5:\nWould you like to use numeric characters in your password?");
-
-    // Check for special characters
-    special = confirm("Step 5/5:\nWould you like to use special characters in your password?");
-  }
-  // Validate the entered parameters, with at least ONE selected
-  while (!validateParameter());
-
-  // Time to generate the password
-  // Loop for the password length
-  for (var i = 0; i < passwordLength; i++) {
-
-    // Reset the result to an empty string before generating
-    var result = "";
-
-    // Randomly select the parameter type
-    var choice = generateRandomNumber(1, chosenParameters.length);
-    var chosen = chosenParameters[choice - 1];
-
-    // Choose which type of character to generate
-    switch (chosen) {
-
-      case "lowercase":
-        result = generateCharacter(false);
-        break;
-
-      case "uppercase":
-        result = generateCharacter(true);
-        break;
-
-      case "numeric":
-        result = generateNumeric();
-        break;
-
-      case "special":
-        result = generateSpecial();
-        break;
-
-      default:
-        break;
-    }
-
-    // Add the returned character to the password
-    randomPassword += result;
-    console.log('Generating password(' + i + '): ' + randomPassword);
-
-  }
-
-  // Return the password to the function
-  return randomPassword;
-}
-
 // Function to validate the number input is valid
 function validateNumber(number) {
 
@@ -199,6 +125,80 @@ function generateSpecial() {
 
   // Return the chosen character
   return chosen;
+}
+
+// Function to generate the password
+function generatePassword() {
+
+  // Reset the variables
+  resetVariables();
+
+  // Prompts to retrieve password length
+  do {
+    passwordLength = prompt("Step 1/5:\nPlease choose a password length, between 8 and 128 characters.")
+  }
+  // Validate the password input
+  while (!validateNumber(passwordLength));
+
+  // Check remaining parameter
+  do {
+    // Check for lowercase characters
+    lowercase = confirm("Step 2/5:\nWould you like to use lowercase characters in your password?");
+
+    // Check for uppercase characters
+    uppercase = confirm("Step 3/5:\nWould you like to use uppercase characters in your password?");
+
+    // Check for numeric characters
+    numeric = confirm("Step 4/5:\nWould you like to use numeric characters in your password?");
+
+    // Check for special characters
+    special = confirm("Step 5/5:\nWould you like to use special characters in your password?");
+  }
+  // Validate the entered parameters, with at least ONE selected
+  while (!validateParameter());
+
+  // Time to generate the password
+  // Loop for the password length
+  for (var i = 0; i < passwordLength; i++) {
+
+    // Reset the result to an empty string before generating
+    var result = "";
+
+    // Randomly select the parameter type
+    var choice = generateRandomNumber(1, chosenParameters.length);
+    var chosen = chosenParameters[choice - 1];
+
+    // Choose which type of character to generate
+    switch (chosen) {
+
+      case "lowercase":
+        result = generateCharacter(false);
+        break;
+
+      case "uppercase":
+        result = generateCharacter(true);
+        break;
+
+      case "numeric":
+        result = generateNumeric();
+        break;
+
+      case "special":
+        result = generateSpecial();
+        break;
+
+      default:
+        break;
+    }
+
+    // Add the returned character to the password
+    randomPassword += result;
+    console.log('Generating password(' + i + '): ' + randomPassword);
+
+  }
+
+  // Return the password to the function
+  return randomPassword;
 }
 
 // Write password to the #password input
