@@ -86,7 +86,7 @@ function generateCharacter(isUppercase) {
   // Declare the available options
   var options = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-  // Chosen the option randomly
+  // Choose the option randomly
   var choice = generateRandomNumber(1, options.length);
   var chosen = options[choice - 1];
 
@@ -105,7 +105,7 @@ function generateNumeric() {
   // Declare the available options
   var options = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  // Chosen the option randomly
+  // Choose the option randomly
   var choice = generateRandomNumber(1, options.length);
   var chosen = options[choice - 1];
 
@@ -119,7 +119,7 @@ function generateSpecial() {
   // Declare the available options
   var options = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "z@", "[", "\\", "]", "^", "_", "{", "|", "}", "~"];
 
-  // Chosen the option randomly
+  // Choose the option randomly
   var choice = generateRandomNumber(1, options.length);
   var chosen = options[choice - 1];
 
