@@ -1,6 +1,10 @@
 # 03 Javascript: Password Generator
+UWA Project, Week 3
 
-For this project we needed to create an application that generates a random password based on user-selected criteria. 
+![picture](./assets/images/screenshot.jpg)
+
+## Project Description
+For this project we needed to create an application that generates a random password based on user-selected criteria using Javascript. 
 
 The main goal was:
 ```
@@ -28,6 +32,9 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
+
+## Link to Deployed Application
+https://diemrbond.github.io/PasswordGenerator/
 
 ## Author
 Andrew Kelleher 
